@@ -55,6 +55,7 @@ public class BuildDetailsImpl implements BuildDetails {
     private String userName;
     private final List<BuildParameter> parameters = new ArrayList<BuildParameter>();
     private BuildNode node = new BuildNodeImpl();
+    private Integer parentId;
 
     /**
      * @see org.jenkins.plugins.audit2db.model.BuildDetails#getId()
@@ -256,6 +257,22 @@ public class BuildDetailsImpl implements BuildDetails {
     public void setNode(final BuildNode node) {
 	this.node = node;
     }
+   
+    /**
+     * @see org.jenkins.plugins.audit2db.model.BuildDetails#getParentId()
+     */
+    @Override
+    public Integer getParentId() {
+		return parentId;
+	}
+    /**
+     * @see org.jenkins.plugins.audit2db.model.BuildDetails#setParentId(Integer)
+     */
+    @Override
+    @Column(nullable = true, unique = false)
+	public void setParentId(Integer parentId) {
+		this.parentId = parentId;
+	}
 
     @Override
     public String toString() {

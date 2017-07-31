@@ -56,4 +56,8 @@ public interface BuildDetails {
     BuildNode getNode();
 
     void setNode(BuildNode node);
+
+	Integer getParentId();
+
+	void setParentId(Integer parentId);
 }
